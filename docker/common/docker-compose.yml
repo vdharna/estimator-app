@@ -1,0 +1,26 @@
+version: '2'
+services:
+  configuration-server:
+    image: estimator-app/configuration-server:1
+    ports:
+       - "8888:8888"
+    #environment:
+      #ENCRYPT_KEY:       "IMSYMMETRIC"
+  database:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "p0stgr@s"
+      POSTGRES_DB:       "estimator_local"
+  project-service:
+    image: estimator-app/project-service:1
+    ports:
+      - "8080:8080"
+    environment:
+      PROFILE: "default"
+      CONFIGSERVER_URI: "http://configuration-server:8888"
+      CONFIGSERVER_PORT:   "8888"
+      DATABASESERVER_PORT: "5432"
+      #ENCRYPT_KEY:       "IMSYMMETRIC"

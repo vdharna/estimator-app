@@ -31,6 +31,15 @@
 
 	<build>
 		<plugins>
+			      <plugin>
+        <groupId>com.spotify</groupId>
+        <artifactId>docker-maven-plugin</artifactId>
+        <version>0.4.10</version>
+        <configuration>
+        <baseImage>java</baseImage>
+        <imageName>estimator-app</imageName>
+      </configuration>
+      </plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
