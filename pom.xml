@@ -26,6 +26,7 @@
 
   <modules>
     <module>configuration-server</module>
+    <module>project-service</module>
   </modules>
 
 	<build>
