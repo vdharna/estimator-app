@@ -7,6 +7,6 @@ spring:
         encrypt.enabled: false
         git:
           uri: https://github.com/vdharna/estimator-app
-          searchPaths: config-repo/organization-service
+          searchPaths: config-repo/organization-service, config-repo/project-service
           username: vdharna
           password: G0$harks
