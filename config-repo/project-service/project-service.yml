@@ -7,6 +7,7 @@ spring.datasource.username: "postgres"
 spring.datasource.password: "p0stgr@s"
 spring.datasource.testWhileIdle: "true"
 spring.datasource.validationQuery: "SELECT 1"
+spring.datasource.initialize: false
 spring.jpa.properties.hibernate.dialect: "org.hibernate.dialect.PostgreSQLDialect"
 example.property: "Hello"
 #signing.key: "345345fsdfsf5345"
