@@ -23,3 +23,4 @@ services:
       CONFIGSERVER_URI: http://configuration-server:8888
       CONFIGSERVER_PORT: '8888'
       DATABASESERVER_PORT: '5432'
+      ENCRYPT_KEY: ${ENCRYPT_KEY}
