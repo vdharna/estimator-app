@@ -10,13 +10,13 @@ import javax.persistence.Table;
 public class Project {
 
 	@Id
-	@Column(name = "projectId", nullable = false)
+	@Column(name = "project_id", nullable = false)
 	private String projectId;
 
 	@Column(name = "organization_id", nullable = false)
 	private String organizationId;
 
-	@Column(name = "projectName", nullable = false)
+	@Column(name = "project_name", nullable = false)
 	private String projectName;
 
 	@Column(name = "comment")

@@ -1,9 +1,9 @@
 DROP TABLE IF EXISTS project;
 
 CREATE TABLE project (
-  id        VARCHAR(100) PRIMARY KEY NOT NULL,
+  project_id        VARCHAR(100) PRIMARY KEY NOT NULL,
   organization_id   TEXT NOT NULL,
-  name      TEXT NOT NULL,
+  project_name      TEXT NOT NULL,
   comment           VARCHAR(100));
 
 
