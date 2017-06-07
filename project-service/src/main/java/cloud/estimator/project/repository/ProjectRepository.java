@@ -12,8 +12,8 @@ public interface ProjectRepository extends CrudRepository<Project, String> {
 
 	public List<Project> findByOrganizationId(String organizationId);
 
-	public List<Project> findByOrganizationIdAndProjectId(String organizationId, String projectId); 
-	
-	public List<Project> findByProjectName(String projectName);
+	public Project findByOrganizationIdAndProjectId(String organizationId, String projectId);
+
+	public List<Project> findByOrganizationIdAndProjectName(String organizationId, String projectName);
 
 }
