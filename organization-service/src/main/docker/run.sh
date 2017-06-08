@@ -1,7 +1,4 @@
 #!/bin/sh
-getPort() {
-    echo $1 | cut -d : -f 3 | xargs basename
-}
 
 echo "********************************************************"
 echo "Waiting for the eureka server to start on port $EUREKASERVER_PORT"
@@ -22,11 +19,11 @@ echo "********************************************************"
 while ! `nc -z configuration-server $CONFIGSERVER_PORT`; do sleep 3; done
 echo "*******  Configuration Server has started"
 
-
 echo "********************************************************"
-echo "Starting Project Service with Configuration Service via Eureka :  $EUREKASERVER_URI" ON PORT: $SERVER_PORT;
+echo "Starting Organization Service  "
 echo "********************************************************"
 java -Djava.security.egd=file:/dev/./urandom -Dserver.port=$SERVER_PORT   \
      -Deureka.client.serviceUrl.defaultZone=$EUREKASERVER_URI             \
      -Dspring.cloud.config.uri=$CONFIGSERVER_URI                          \
-     -Dspring.profiles.active=$PROFILE -jar /usr/local/project-service/@project.build.finalName@.jar
+     -Dspring.profiles.active=$PROFILE                                   \
+     -jar /usr/local/organization-service/@project.build.finalName@.jar
