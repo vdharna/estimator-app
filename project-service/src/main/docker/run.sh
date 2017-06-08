@@ -1,7 +1,3 @@
-#!/bin/sh
-getPort() {
-    echo $1 | cut -d : -f 3 | xargs basename
-}
 
 echo "********************************************************"
 echo "Waiting for the eureka server to start on port $EUREKASERVER_PORT"
