@@ -2,10 +2,7 @@ spring:
   application:
     name: organization-service
   profiles:
-    active:
-      default
+    active: default
   cloud:
     config:
       enabled: true
-      
-      
