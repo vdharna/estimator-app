@@ -40,6 +40,13 @@ public class ProjectServiceController {
 		return projectService.getProject(organizationId, projectId);
 	}
 
+	@RequestMapping(value = "/name/{projectName}", method = RequestMethod.GET)
+	public List<Project> getProjectByNameContains(@PathVariable("organizationId") String organizationId,
+			@PathVariable("projectName") String projectName) {
+
+		return projectService.getProjectsByNameContains(organizationId, projectName);
+	}
+
 	@RequestMapping(value = "{projectId}", method = RequestMethod.PUT)
 	public String updateProject(@PathVariable("projectId") String projectId) {
 		return String.format("This is the put");

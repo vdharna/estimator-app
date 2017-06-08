@@ -36,6 +36,10 @@ public class ProjectService {
 		return projectRepository.findByOrganizationId(organizationId);
 	}
 
+	public List<Project> getProjectsByNameContains(String organizationId, String projectName) {
+		return projectRepository.findByOrganizationIdAndProjectNameContains(organizationId, projectName);
+	}
+
 	public Project saveProject(Project project) {
 		return projectRepository.save(project);
 	}
