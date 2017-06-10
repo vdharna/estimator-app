@@ -10,5 +10,5 @@ spring:
         git:
           uri: https://github.com/vdharna/estimator-app
           searchPaths: config-repo/project-service, config-repo/organization-service
-          username: vdharna
-          password: G0$harks
+          username: # -Dspring.cloud.config.server.git.username
+          password: # -Dspring.cloud.config.server.git.password
