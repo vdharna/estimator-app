@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import cloud.estimator.project.client.OrganizationClient;
+import cloud.estimator.project.clients.OrganizationRestTemplateClient;
 import cloud.estimator.project.config.ServiceConfig;
 import cloud.estimator.project.model.Organization;
 import cloud.estimator.project.model.Project;
@@ -15,20 +15,19 @@ public class ProjectService {
 
 	private final ProjectRepository projectRepository;
 	private final ServiceConfig serviceConfig;
-	private final OrganizationClient organizationClient;
+	private final OrganizationRestTemplateClient organizationRestClient;
 
 	public ProjectService(ProjectRepository projectRepository, ServiceConfig serviceConfig,
-			OrganizationClient organizationClient) {
+			OrganizationRestTemplateClient organizationRestClient) {
 		super();
 		this.projectRepository = projectRepository;
 		this.serviceConfig = serviceConfig;
-		this.organizationClient = organizationClient;
+		this.organizationRestClient = organizationRestClient;
 	}
 
 	private Organization retrieveOrgInfo(String organizationId) {
 
-		Organization organization = organizationClient.getOrganization(organizationId);
-
+		Organization organization = organizationRestClient.getOrganization(organizationId);
 		return organization;
 	}
 

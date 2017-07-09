@@ -27,6 +27,7 @@
 	<modules>
 		<module>configuration-server</module>
 		<module>eureka-server</module>
+		<module>zuul-server</module>
 		<module>project-service</module>
 		<module>organization-service</module>
 		
