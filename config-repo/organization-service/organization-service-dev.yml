@@ -1,12 +1,8 @@
-spring.jpa.database: "POSTGRESQL"
-spring.datasource.platform:  "postgres"
-spring.jpa.show-sql: "true"
-spring.database.driverClassName: "org.postgresql.Driver"
-spring.datasource.url: "jdbc:postgresql://localhost:5432/estimator_local"
-spring.datasource.username: "postgres"
-spring.datasource.password: "{cipher}5db65212ef51d3dec0ec5e108cf6a6b7a5517fdab8b9fd6087759da5a3f92b97"
-spring.datasource.testWhileIdle: "true"
-spring.datasource.validationQuery: "SELECT 1"
-spring.datasource.initialize: true
-spring.jpa.properties.hibernate.dialect: "org.hibernate.dialect.PostgreSQLDialect"
-example.property: "Hello"
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/estimator_local"
+    username: postgres
+    password: "{cipher}5db65212ef51d3dec0ec5e108cf6a6b7a5517fdab8b9fd6087759da5a3f92b97"
+
+example:
+  property: "Hello"
