@@ -18,18 +18,6 @@ public class OrganizationService {
 		this.serviceConfig = serviceConfig;
 	}
 
-	public Organization getOrg(String organizationId) {
-		return organizationRepository.findById(organizationId);
-	}
-
-	public void saveOrg(Organization org) {
-		organizationRepository.save(org);
-	}
-
-	public void deleteOrg(Organization org) {
-		organizationRepository.delete(org.getId());
-	}
-	
 	public String getProperty() {
 		return serviceConfig.getExampleProperty();
 	}

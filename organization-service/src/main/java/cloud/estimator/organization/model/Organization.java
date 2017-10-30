@@ -1,75 +1,37 @@
 package cloud.estimator.organization.model;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
-import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import lombok.Data;
 
 @Entity
-@Table(name = "organization")
+@Data
+@EntityListeners(AuditingEntityListener.class)
 public class Organization {
-	@Id
-	@Column(name = "organization_id", nullable = false)
-	String id;
 
-	@Column(name = "name", nullable = false)
-	String name;
-
-	@Column(name = "contact_name", nullable = false)
-	String contactName;
-
-	@Column(name = "contact_email", nullable = false)
-	String contactEmail;
-
-	@Column(name = "contact_phone", nullable = false)
-	String contactPhone;
+	private @Id String id;
+	private @NotNull String name;
+	private String contactName;
+	private String contactEmail;
+	private String contactPhone;
+	private @NotNull boolean active;
+	private @CreatedDate LocalDateTime createdDate;
+	private @LastModifiedDate LocalDateTime lastModifiedDate;
 
 	@PrePersist
 	private void ensureId() {
-		this.setId(UUID.randomUUID().toString());
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getContactName() {
-		return contactName;
-	}
-
-	public void setContactName(String contactName) {
-		this.contactName = contactName;
-	}
-
-	public String getContactEmail() {
-		return contactEmail;
-	}
-
-	public void setContactEmail(String contactEmail) {
-		this.contactEmail = contactEmail;
-	}
-
-	public String getContactPhone() {
-		return contactPhone;
-	}
-
-	public void setContactPhone(String contactPhone) {
-		this.contactPhone = contactPhone;
+		this.id = UUID.randomUUID().toString();
 	}
 
 }

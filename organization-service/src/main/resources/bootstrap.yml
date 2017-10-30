@@ -1,9 +1,21 @@
 spring:
   application:
     name: organization-service
-  profiles:
-    active: default
+  
+  cloud:
+    config:
+      enabled: false
+
+---
+
+spring:
+  profiles: cloud
   cloud:
     config:
       enabled: true
       uri: http://localhost:8888
+      fail-fast: true
+      
+
+  
+
