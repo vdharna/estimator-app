@@ -17,5 +17,5 @@ eureka:
     enabled: true
 
 example:
-  property: "Hello"
+  property: "Cloud"
 
