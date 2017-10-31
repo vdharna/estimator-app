@@ -1,10 +1,14 @@
-CREATE TABLE organization (
-  ID        			 VARCHAR(100) PRIMARY KEY NOT NULL,
-  NAME                   TEXT NOT NULL,
-  CONTACT_NAME           TEXT,
-  CONTACT_EMAIL          TEXT,
-  CONTACT_PHONE          TEXT,
-  ACTIVE				 BOOLEAN,
-  CREATED_DATE 			 DATE,
-  LAST_MODIFIED_DATE 	 DATE
-  );
+DROP TABLE IF EXISTS organization CASCADE; 
+
+CREATE TABLE organization 
+  ( 
+     id                 VARCHAR(255) NOT NULL, 
+     active             BOOLEAN NOT NULL, 
+     contact_email      VARCHAR(255), 
+     contact_name       VARCHAR(255), 
+     contact_phone      VARCHAR(255), 
+     created_date       BYTEA, 
+     last_modified_date BYTEA, 
+     name               VARCHAR(255) NOT NULL, 
+     PRIMARY KEY (id) 
+  ) 

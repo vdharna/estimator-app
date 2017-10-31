@@ -21,3 +21,4 @@ flyway:
   - classpath:db/migration
   - classpath:cloud/db/migration
   clean-on-validation-error: true
+  baseline-on-migrate: true
