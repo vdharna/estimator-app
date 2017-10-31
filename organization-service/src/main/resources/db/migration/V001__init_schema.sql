@@ -9,6 +9,7 @@ CREATE TABLE organization
      contact_phone      VARCHAR(255), 
      created_date       BYTEA, 
      last_modified_date BYTEA, 
-     name               VARCHAR(255) NOT NULL, 
+     name               VARCHAR(255) NOT NULL,
+     address			VARCHAR(255),
      PRIMARY KEY (id) 
   ) 
