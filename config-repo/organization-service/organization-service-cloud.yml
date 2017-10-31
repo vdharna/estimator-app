@@ -16,3 +16,8 @@ eureka:
 example:
   property: "Cloud"
 
+flyway:
+  locations:
+  - classpath:db/migration
+  - classpath:development/db/migration
+  clean-on-validation-error: true

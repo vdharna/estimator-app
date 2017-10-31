@@ -26,10 +26,12 @@ public class OrganizationRepositoryTest {
 	public void findOrgShouldReturnOrg() throws Exception {
 		Organization actual = this.organizationRepository.findOne("e254f8c-c442-4ebe-a82a-e2fc1d1ff78a");
 		assertThat(actual).isNotNull();
+	}
+
+	@Test
+	public void findContactShouldReturnContact() throws Exception {
+		Organization actual = this.organizationRepository.findOne("e254f8c-c442-4ebe-a82a-e2fc1d1ff78a");
 		assertThat(actual.getContactName()).isEqualTo("Dharminder Dharna");
-		// assertThat(actual.getFirstName()).isEqualTo("Jack");
-		// assertThat(actual.getLastName()).isEqualTo("Frost");
-		// assertThat(actual.getEmail()).isEqualTo("jfrost@example.com");
 	}
 
 }
