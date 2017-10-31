@@ -19,5 +19,5 @@ example:
 flyway:
   locations:
   - classpath:db/migration
-  - classpath:development/db/migration
+  - classpath:cloud/db/migration
   clean-on-validation-error: true
