@@ -17,6 +17,7 @@ example:
   property: "Cloud"
 
 flyway:
+  enabled: true
   locations:
   - classpath:db/migration
   - classpath:cloud/db/migration
